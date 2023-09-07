@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5C29A964-18E1-4318-A8F9-882439DF75F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicLink", "src\MagicLink\MagicLink.csproj", "{B70D31AF-6800-40CA-92F0-F9DAE4602382}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3077CBF0-85CB-4045-B584-0E2BF358DDE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicLink.UnitTests", "tests\MagicLink.UnitTests\MagicLink.UnitTests.csproj", "{8FA1E318-CFE4-4644-9BB9-FE340CC06CA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B70D31AF-6800-40CA-92F0-F9DAE4602382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B70D31AF-6800-40CA-92F0-F9DAE4602382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B70D31AF-6800-40CA-92F0-F9DAE4602382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B70D31AF-6800-40CA-92F0-F9DAE4602382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA1E318-CFE4-4644-9BB9-FE340CC06CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA1E318-CFE4-4644-9BB9-FE340CC06CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA1E318-CFE4-4644-9BB9-FE340CC06CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA1E318-CFE4-4644-9BB9-FE340CC06CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B70D31AF-6800-40CA-92F0-F9DAE4602382} = {5C29A964-18E1-4318-A8F9-882439DF75F3}
+		{8FA1E318-CFE4-4644-9BB9-FE340CC06CA7} = {3077CBF0-85CB-4045-B584-0E2BF358DDE0}
+	EndGlobalSection
+EndGlobal
