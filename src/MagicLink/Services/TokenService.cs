@@ -11,9 +11,11 @@ public class TokenService : ITokenService
 {
     private readonly JwtSecurityTokenHandler _tokenHandler;
     private readonly string _securityKey;
+    private readonly ILogger<TokenService> _logger;
 
-    public TokenService(string securityKey)
+    public TokenService(string securityKey, ILogger<TokenService> logger)
     {
+        _logger = logger;
         _securityKey = securityKey;
         _tokenHandler = new JwtSecurityTokenHandler();
     }
@@ -51,8 +53,8 @@ public class TokenService : ITokenService
             {
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(securityKey),
-                ValidateIssuer = true,
-                ValidateAudience = true,
+                ValidateIssuer = false,
+                ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             }, out SecurityToken validatedToken);
 
@@ -60,6 +62,7 @@ public class TokenService : ITokenService
         }
         catch (Exception e)
         {
+            _logger.LogError(e.Message);
             return false;
         }
 

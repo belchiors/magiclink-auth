@@ -11,12 +11,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Set up token service
-builder.Services.AddScoped<ITokenService, TokenService>(_ => {
+builder.Services.AddScoped<ITokenService, TokenService>(options => {
     var secretKey = builder.Environment.IsProduction()
         ? Environment.GetEnvironmentVariable("SECRET_KEY")
         : builder.Configuration["Local:SECURITY_KEY"];
     
-    return new TokenService(secretKey);
+    return new TokenService(secretKey, options.GetRequiredService<ILogger<TokenService>>());
 });
 
 var app = builder.Build();
