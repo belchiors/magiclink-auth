@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace MagicLink.Models;
 
-public record User(string Email);
+public record User([EmailAddress] string Email);
