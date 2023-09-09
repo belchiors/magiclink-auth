@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5C29A964-18E1-4318-A8F9-882439DF75F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicLink", "src\MagicLink\MagicLink.csproj", "{B70D31AF-6800-40CA-92F0-F9DAE4602382}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicLink.API", "src\MagicLink.API\MagicLink.API.csproj", "{B70D31AF-6800-40CA-92F0-F9DAE4602382}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3077CBF0-85CB-4045-B584-0E2BF358DDE0}"
 EndProject

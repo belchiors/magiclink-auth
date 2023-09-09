@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MagicLink\MagicLink.csproj" />
+    <ProjectReference Include="..\..\src\MagicLink.API\MagicLink.API.csproj" />
   </ItemGroup>
 
 </Project>

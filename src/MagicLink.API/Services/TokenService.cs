@@ -3,9 +3,9 @@ using System.Security.Claims;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
-using MagicLink.Interfaces;
+using MagicLink.API.Interfaces;
 
-namespace MagicLink.Services;
+namespace MagicLink.API.Services;
 
 public class TokenService : ITokenService
 {

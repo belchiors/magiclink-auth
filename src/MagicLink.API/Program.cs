@@ -1,5 +1,5 @@
-using MagicLink.Interfaces;
-using MagicLink.Services;
+using MagicLink.API.Interfaces;
+using MagicLink.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

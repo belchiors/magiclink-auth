@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MagicLink.Models;
+namespace MagicLink.API.Models;
 
 public record User([EmailAddress] string Email);

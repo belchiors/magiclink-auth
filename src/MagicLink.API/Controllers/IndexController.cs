@@ -1,8 +1,8 @@
-using MagicLink.Interfaces;
-using MagicLink.Models;
+using MagicLink.API.Interfaces;
+using MagicLink.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MagicLink.Controllers;
+namespace MagicLink.API.Controllers;
 
 [ApiController]
 [Route("v1/")]

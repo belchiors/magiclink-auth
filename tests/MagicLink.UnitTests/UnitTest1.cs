@@ -1,4 +1,4 @@
-namespace MagicLink.UnitTests;
+namespace MagicLink.API.UnitTests;
 
 public class UnitTest1
 {

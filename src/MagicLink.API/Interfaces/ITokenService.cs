@@ -1,6 +1,6 @@
-using MagicLink.Models;
+using MagicLink.API.Models;
 
-namespace MagicLink.Interfaces;
+namespace MagicLink.API.Interfaces;
 
 public interface ITokenService
 {
