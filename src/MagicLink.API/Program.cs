@@ -19,6 +19,8 @@ builder.Services.AddScoped<ITokenService, TokenService>(options => {
     return new TokenService(secretKey, options.GetRequiredService<ILogger<TokenService>>());
 });
 
+builder.Services.AddSingleton<ITaskService, TaskService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
