@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace MagicLink.API.Models;
+namespace MagicLink.Shared.Models;
 
 public record Message
 {

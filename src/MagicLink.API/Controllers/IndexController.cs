@@ -3,6 +3,7 @@ using System.Text;
 
 using MagicLink.API.Interfaces;
 using MagicLink.API.Models;
+using MagicLink.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MagicLink.API.Controllers;
