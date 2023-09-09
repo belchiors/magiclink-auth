@@ -19,6 +19,9 @@ public record Message
 
     public static Message? FromJson(string json)
     {
-        return JsonSerializer.Deserialize<Message>(json);
+        return JsonSerializer.Deserialize<Message>(json, new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        });
     }
 };
