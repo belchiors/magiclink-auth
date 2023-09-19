@@ -10,5 +10,5 @@ namespace MagicLink.Worker;
 
 internal interface IEmailService
 {
-    Task<Response> SendEmail(Message message);
+    Task<Response> SendEmail(Message? message);
 }

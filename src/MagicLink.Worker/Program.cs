@@ -16,7 +16,14 @@ class Program
 
     static Program()
     {
-        _emailService = new EmailService();
+        var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+
+        if (apiKey == null)
+        {
+            throw new Exception("The SENDGRID_API_KEY environment variable is not found.");
+        }
+
+        _emailService = new EmailService(apiKey);
     }
 
     static void Main(string[] args)
@@ -49,8 +56,16 @@ class Program
             var body = args.Body.ToArray();
             var entity = Message.FromJson(Encoding.UTF8.GetString(body));
 
-            // TODO: Implement service to send e-mail to user
-            await _emailService.SendEmail(entity);
+            var response = await _emailService.SendEmail(entity);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Message sent");
+            }
+            else
+            {
+                Console.WriteLine("Could not send e-mail message.");
+            }
 
             channel.BasicAck(deliveryTag: args.DeliveryTag, multiple: false);
         };

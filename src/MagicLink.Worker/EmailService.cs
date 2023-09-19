@@ -10,29 +10,22 @@ public class EmailService : IEmailService
 {
     private readonly SendGridClient _client;
 
-    public EmailService()
+    public EmailService(string apiKey)
     {
-        var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
-
-        if (apiKey == null)
-        {
-            throw new Exception("The SENDGRID_API_KEY environment variable is not found.");
-        }
-
         _client = new SendGridClient(apiKey);
     }
 
-    public async Task<Response> SendEmail(Message message)
+    public async Task<Response> SendEmail(Message? message)
     {
         if (message == null)
         {
             throw new ArgumentNullException("message");
         }
 
-        var from = new EmailAddress("test@example.com", "Example User");
-        var subject = "Sending with SendGrid is Fun";
-        var to = new EmailAddress(message.From);
-        var msg = MailHelper.CreateSingleEmail(from, to, subject, "", message.Body);
-        return await _client.SendEmailAsync(msg);
+        var from = new EmailAddress(message.From);
+        var to = new EmailAddress(message.To);
+        var email = MailHelper.CreateSingleEmail(from, to, message.Subject, message.Body, message.Body);
+
+        return await _client.SendEmailAsync(email);
     }
 }
