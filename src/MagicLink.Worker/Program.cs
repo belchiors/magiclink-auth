@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
+using EllipticCurve;
 using MagicLink.Shared.Models;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -11,6 +12,13 @@ namespace MagicLink.Worker;
 
 class Program
 {
+    private static readonly IEmailService _emailService;
+
+    static Program()
+    {
+        _emailService = new EmailService();
+    }
+
     static void Main(string[] args)
     {
         var factory = new ConnectionFactory
@@ -36,13 +44,13 @@ class Program
 
         var consumer = new EventingBasicConsumer(channel);
 
-        consumer.Received += (model, args) =>
+        consumer.Received += async (model, args) =>
         {
             var body = args.Body.ToArray();
             var entity = Message.FromJson(Encoding.UTF8.GetString(body));
 
             // TODO: Implement service to send e-mail to user
-            Console.WriteLine(entity?.ToString());
+            await _emailService.SendEmail(entity);
 
             channel.BasicAck(deliveryTag: args.DeliveryTag, multiple: false);
         };
