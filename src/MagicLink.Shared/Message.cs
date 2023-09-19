@@ -4,6 +4,7 @@ namespace MagicLink.Shared.Models;
 
 public record Message
 {
+    public string? Subject { get; init; }
     public string? From { get; init; }
     public string? To { get; init; }
     public string? Body { get; init; }
