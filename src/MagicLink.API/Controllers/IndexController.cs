@@ -60,7 +60,7 @@ public class IndexController : ControllerBase
             Subject = string.Empty,
             From = model.Email,
             To = model.Email,
-            Body = _htmlTemplate.Replace("{href}", $"href/{token}")
+            Body = _htmlTemplate.Replace("{href}", $"{href}/{token}")
         };
 
         _taskService.SendMessage(Encoding.UTF8.GetBytes(message.ToJson()));
